@@ -232,21 +232,20 @@ TARGET_NAMES = [
 # ============================================================
 @st.cache_resource
 def load_nutritrack_model():
+    base = os.path.dirname(__file__)
     model = load_model(
-        'nutritrack_best_model.keras',
-        custom_objects={
-            'AttentionLayer': AttentionLayer,
-            'FocalLoss'     : FocalLoss
+        os.path.join(base, 'nutritrack_best_model.keras'),
         }
     )
     return model
 
 @st.cache_data
 def load_data():
-    df       = pd.read_csv('dataset_cleaned.csv')
-    df_raw   = pd.read_csv('ObesityDataSet_raw_and_data_sinthetic__1_.csv')
-    X_test   = np.load('X_test.npy')
-    y_test   = np.load('y_test.npy').astype('int32')
+    base = os.path.dirname(__file__)
+    df       = pd.read_csv(os.path.join(base, 'dataset_cleaned.csv'))
+    df_raw   = pd.read_csv(os.path.join(base, 'ObesityDataSet_raw_and_data_sinthetic__1_.csv'))
+    X_test   = np.load(os.path.join(base, 'X_test.npy'))
+    y_test   = np.load(os.path.join(base, 'y_test.npy')).astype('int32')
     return df, df_raw, X_test, y_test
 
 # ============================================================
