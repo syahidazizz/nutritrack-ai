@@ -235,7 +235,7 @@ def load_nutritrack_model():
     base = os.path.dirname(__file__)
     model = load_model(
         os.path.join(base, 'nutritrack_best_model.keras'),
-        }
+        
     )
     return model
 
