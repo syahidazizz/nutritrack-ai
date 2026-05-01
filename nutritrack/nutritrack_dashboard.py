@@ -27,9 +27,9 @@ st.set_page_config(
 # ============================================================
 # CUSTOM COMPONENTS (harus didefinisikan ulang untuk load model)
 # ============================================================
+@tf.keras.saving.register_keras_serializable()
 class AttentionLayer(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
-        super(AttentionLayer, self).__init__(**kwargs)
 
     def build(self, input_shape):
         self.attention_dense = tf.keras.layers.Dense(
@@ -45,6 +45,7 @@ class AttentionLayer(tf.keras.layers.Layer):
         return super(AttentionLayer, self).get_config()
 
 
+@tf.keras.saving.register_keras_serializable()
 class FocalLoss(tf.keras.losses.Loss):
     def __init__(self, gamma=2.0, alpha=0.25, **kwargs):
         super(FocalLoss, self).__init__(**kwargs)
