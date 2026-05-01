@@ -3,6 +3,7 @@
 # Cara jalankan: streamlit run nutritrack_dashboard.py
 # ============================================================
 
+import os
 import streamlit as st
 import numpy as np
 import pandas as pd
