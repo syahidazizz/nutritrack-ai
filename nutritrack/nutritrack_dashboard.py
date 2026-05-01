@@ -404,8 +404,8 @@ with tab2:
                 faf       = st.slider("Frekuensi Olahraga per Minggu (hari)", 0, 7, 1)
                 tue       = st.slider("Waktu Pakai Teknologi per Hari (jam)", 0, 12, 4)
                 transport = st.selectbox("Transportasi Utama",
-                                         ["Automobile", "Bike", "Motorbike",
-                                          "Public_Transportation", "Walking"])
+                                         ["Mobil", "Sepeda", "Motor",
+                                          "Transportasi Umum", "Jalan Kaki])
 
             submitted = st.form_submit_button("🔍 Prediksi Sekarang", use_container_width=True)
 
