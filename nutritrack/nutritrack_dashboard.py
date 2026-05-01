@@ -30,6 +30,7 @@ st.set_page_config(
 @tf.keras.saving.register_keras_serializable()
 class AttentionLayer(tf.keras.layers.Layer):
     def __init__(self, **kwargs):
+        super(AttentionLayer, self).__init__(**kwargs)
 
     def build(self, input_shape):
         self.attention_dense = tf.keras.layers.Dense(
