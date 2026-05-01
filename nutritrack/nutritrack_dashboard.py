@@ -405,7 +405,7 @@ with tab2:
                 tue       = st.slider("Waktu Pakai Teknologi per Hari (jam)", 0, 12, 4)
                 transport = st.selectbox("Transportasi Utama",
                                          ["Mobil", "Sepeda", "Motor",
-                                          "Transportasi Umum", "Jalan Kaki])
+                                          "Transportasi Umum", "Jalan Kaki"])
 
             submitted = st.form_submit_button("🔍 Prediksi Sekarang", use_container_width=True)
 
@@ -417,8 +417,8 @@ with tab2:
             cal_mon_enc   = 1 if cal_monitoring == "Ya" else 0
             alcohol_enc   = {"Tidak": 0, "Kadang": 1, "Sering": 2, "Selalu": 3}[alcohol]
             snack_enc     = {"Tidak": 0, "Kadang": 1, "Sering": 2, "Selalu": 3}[snack]
-            transport_enc = {"Automobile": 0, "Bike": 1, "Motorbike": 2,
-                             "Public_Transportation": 3, "Walking": 4}[transport]
+            transport_enc = {"Mobil": 0, "Sepeda": 1, "Motor": 2,
+                             "Transportasi Umum": 3, "Jalan Kaki": 4}[transport]
 
             def scale(val, min_val, max_val):
                 return (val - min_val) / (max_val - min_val)
